@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const { nanoid } = require("nanoid");
 const ascii = require("./ascii");
 
-const db = lowDb(new FileSync("db.json"));
+const db = lowDb(new FileSync("./db.json"));
 
 db.defaults({ notes: [] }).write();
 
