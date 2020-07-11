@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const cors = require("cors");
 const lowDb = require("lowdb");
 const FileSync = require("lowdb/adapters/FileSync");
@@ -6,7 +7,7 @@ const bodyParser = require("body-parser");
 const { nanoid } = require("nanoid");
 const ascii = require("./ascii");
 
-const db = lowDb(new FileSync("./db.json"));
+const db = lowDb(new FileSync(path.join(__dirname, "db.json")));
 
 db.defaults({ notes: [] }).write();
 
