@@ -1,7 +1,7 @@
 {
   "builds": [
     {
-      "src": "index.js",
+      "src": "api/index.js",
       "use": "@now/node-server"
     }
   ],
@@ -14,7 +14,7 @@
         "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept"
       },
       "src": "/.*",
-      "dest": "/index.js"
+      "dest": "api/index.js"
     }
   ]
 }
