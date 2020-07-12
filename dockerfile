@@ -13,5 +13,7 @@ RUN yarn
 # Bundle app source
 COPY . .
 
+RUN echo "dockerfile"
+
 EXPOSE 8080
-CMD [ "node", "index.js" ]
+CMD [ "node", "./api/index.js" ]
