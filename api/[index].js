@@ -38,7 +38,7 @@ app.post("/notes/new", (req, res) => {
   res.json({ success: true });
 });
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || PORT, () => {
   console.log(`Server started on port:${PORT} 🚀`);
   ascii();
 });
