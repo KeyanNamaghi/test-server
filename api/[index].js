@@ -13,10 +13,9 @@ db.defaults({ notes: [] }).write();
 
 const app = express();
 
+app.set("port", process.env.PORT || 5000);
 app.use(cors());
 app.use(bodyParser.json());
-
-const PORT = 8080;
 
 app.get("/", (req, res) => {
   return res.send("🏃‍♂️ server running...");
@@ -38,7 +37,8 @@ app.post("/notes/new", (req, res) => {
   res.json({ success: true });
 });
 
-app.listen(process.env.PORT || PORT, () => {
-  console.log(`Server started on port:${PORT} 🚀`);
+app.listen(app.get("port"), () => {
+  console.log(`Server started on port: 5000 🚀`);
+  console.log(`process.env.PORT :${process.env.PORT} 🥳`);
   ascii();
 });
