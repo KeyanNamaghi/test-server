@@ -5,7 +5,7 @@ const lowDb = require("lowdb");
 const FileSync = require("lowdb/adapters/FileSync");
 const bodyParser = require("body-parser");
 const { nanoid } = require("nanoid");
-const ascii = require("./ascii");
+const ascii = require("../ascii");
 
 const db = lowDb(new FileSync(path.join(__dirname, "./db.json")));
 
@@ -16,7 +16,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-const PORT = 1234;
+const PORT = 8080;
 
 app.get("/", (req, res) => {
   return res.send("🏃‍♂️ server running...");

@@ -44,7 +44,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-const PORT = 1234;
+const PORT = 8080;
 ```
 
 GET request for ./ location
